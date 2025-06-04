@@ -12,11 +12,46 @@
     <style>
         header {
             background-color: green;
-            h1{
+
+            h1 {
                 color: black;
             }
-            ul{
+
+            ul {
                 color: black;
+            }
+
+            img {
+                max-width: 7%;
+                max-height: 7%;
+            }
+        }
+
+        /*estilos del div con el ID INICIO*/
+        #INICIO {
+            img {
+                max-width: 50%;
+                max-height: 50%;
+            }
+        }
+
+
+        /*estilos del div con el ID QUIENES SOMOS*/
+        #QUIENES_SOMOS {
+            img {
+                max-width: 50%;
+                max-height: 50%;
+            }
+        }
+
+        /*estilos del div con el ID BLOG*/
+        #BLOG {
+            img {
+                max-width: 50%;
+                max-height: 50%;
+            }
+            P{
+                max-width: 50%;
             }
         }
     </style>
@@ -26,6 +61,7 @@
 
     <header>
         <a href="#INICIO">
+            <img src="img/Fundación Eliseo.jpg" alt="logo">
             <h1>Fundación Psicología Eliseo</h1>
         </a>
         <ul>
@@ -38,10 +74,43 @@
     <!--Sección de inicio-->
     <div id="INICIO">
         <h1>¡Blog del día!</h1>
-        <img src="img/caritas.jpg"alt="caritas felices"> 
+        <img src="img/caritas.jpg" alt="caritas felices">
 
     </div>
-    
+
+    <!--sección de quienes somos-->
+
+    <div id="QUIENES_SOMOS">
+        <h2>Quienes somos</h2>
+        <img src="img/grupo.jpg">
+
+    </div>
+    <!--sección de BLOG-->
+
+    <div id="BLOG">
+        <h2>Temas de interés</h2>
+        <img src="img/Cerebro.jpg">
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit ante felis feugiat massa volutpat mattis sodales,
+            luctus nullam consequat sed posuere mauris tempor fringilla ultrices convallis hac rutrum. Massa auctor
+            semper varius fusce nisi molestie, dui tempor lobortis nunc tortor fermentum, inceptos velit integer leo
+            sociis. Metus neque mattis egestas quisque nunc nostra porta, inceptos penatibus habitant dui parturient
+            suscipit purus, gravida praesent pharetra tortor rhoncus pulvinar.</p>
+
+    </div>
+
+    <div ID="DONACIONES">
+        <h2>Donaciones</h2>
+        <form>
+            <ul>
+                <label>Nombre</label>
+                <input>
+                <label>correo electrónico</label>
+                <input>
+                <button>DONA</button>
+            </ul>
+            
+        </form>
+    </div>
     <!--Lógica del sitio web-->
     <script>
 
