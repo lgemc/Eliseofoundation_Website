@@ -11,21 +11,41 @@
     <!--estilos de los elementos del sitio web-->
     <style>
         header {
-            background-color: green;
+            background-color: rgba(164, 240, 164, 0.457);
 
-            h1 {
-                color: black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+             }
+            .logo {
+                display: flex;
+                align-items: center;
+                text-decoration:none ;
+                color: inherit;
+            }
+            .logo img{
+                max-width: 15%;
+                max-height: 15%;
+                border-radius: 50%;
             }
 
-            ul {
-                color: black;
+            .BARRA_INICIO{
+                list-style: none;
+                display: flex;
+                gap: 20px;
+                margin: 10;
+                padding: 0;
             }
 
-            img {
-                max-width: 7%;
-                max-height: 7%;
+            .BARRA_INICIO a{
+                text-decoration: none;
+                color: #333;
+                font-weight: bold;
+                margin: 10;
+        
             }
-        }
+        
 
         /*estilos del div con el ID INICIO*/
         #INICIO {
@@ -47,9 +67,8 @@
                 scroll-snap-type: x mandatory;
 
             }
+            
         }
-
-
         /*estilos del div con el ID QUIENES SOMOS*/
         #QUIENES_SOMOS {
             img {
@@ -74,15 +93,15 @@
 <body>
 
     <header>
-        <a href="#INICIO">
+        <a href="#INICIO" class="logo">
             <img src="img/Fundación Eliseo.jpg" alt="logo">
             <h1>Fundación Psicología Eliseo</h1>
         </a>
-        <ul>
-            <a href="#INICIO">INICIO</a>
-            <a href="#QUIENES_SOMOS">QUIENES SOMOS</a>
-            <a href="#BLOG">BLOG</a>
-            <a href="#DONACIONES">DONA</a>
+        <ul class="BARRA_INICIO">
+            <li><a href="#INICIO">INICIO</a></li>
+            <li><a href="#QUIENES_SOMOS">QUIENES SOMOS</a></li>
+            <li><a href="#BLOG">BLOG</a></li>
+            <li><a href="#DONACIONES">DONACIONES</a></li>
         </ul>
     </header>
     <!--Sección de inicio-->
