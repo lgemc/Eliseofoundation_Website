@@ -1,184 +1,191 @@
-<!-- Sitio web de fundación de ayuda psicolgógica Fundación Eliseo-->
+<!-- Sitio web de fundación de ayuda psicológica Fundación Eliseo-->
 
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta chartset="UTF-8" />
     <meta name="viewport" content="" width=device-width, initial-scale=1.0 />
     <title>psicologiaeliseo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <!--estilos de los elementos del sitio web-->
     <style>
-        header {
-            background-color: rgba(164, 240, 164, 0.457);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-        }
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+    
+    header {
+    background-color: rgba(164, 240, 164, 0.457);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); 
+    }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: inherit;
-        }
+    .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    }
 
-        .logo img {
-            max-width: 15%;
-            max-height: 15%;
-            border-radius: 50%;
-        }
-        .TITULO {
-            display: flex;
-            /*align-items:center;*/
-            text-decoration: none;
-            color: inherit;
-        }
+    .logo img {
+    max-width: 20%;
+    max-height: 20%;
+    min-width: 20%;
+    border-radius: 0%;
+    }
 
-        .BARRA_INICIO {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-            margin: 10;
-            padding: 0;
-        }
+    .TITULO {
+    display: flex;
+    /*align-items:center;*/
+    text-decoration: none;
+    color: inherit;
+    }
 
-        .BARRA_INICIO a {
-            text-decoration: none;
-            color: #958383;
-            font-weight: lighter;
-            font-size: 1vw;
-            font-family: Geneva, Tahoma, sans-serif ;
-            margin: 5;
-
-        }
-        h1{
-            
-            font-weight: lighter;
-            font-family: Geneva, Tahoma, sans-serif ;
-            margin: 20;
- 
-        }
-
-
-        /*estilos del div con el ID INICIO*/
-        #INICIO {
-
-            h2 {
-                text-align: center;
-                font-family: Geneva, Tahoma, sans-serif ;
-                font-weight: lighter;
-                color: #333;
-                
-            }
-
-
-            .slider {
-
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                overflow-x: auto;
-                scroll-behavior: smooth;
-
-                scroll-snap-type: x mandatory;
-
-            }
-
-            /*Estilos del carrusel de INICIO*/
-
-            .slider {
-                position: relative;
-                width: relative;
-                max-width: 50%;
-                margin: auto;
-                overflow: hidden;
-                border-radius: 10px;
-            }
-
-            .slider-container {
-                overflow: hidden;
-            }
-
-            .slider-track {
-                display: flex;
-                transition: transform 0.5s ease;
-                padding: 0;
-                margin: 0;
-            }
-
-            .slider-track li {
-                list-style: none;
-                flex: 0 0 100%;
-            }
-
-            .slider-track img {
-                width: 100%;
-                height: auto;
-                display: block;
-            }
-
-            .btn-prev,
-            .btn-next {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                background: #ffffffcc;
-                border: none;
-                font-size: 2rem;
-                padding: 5px 10px;
-                cursor: pointer;
-                z-index: 10;
-                border-radius: 5px;
-            }
-
-            .btn-prev {
-                left: 10px;
-            }
-
-            .btn-next {
-                right: 10px;
-            }
-
-        }
+    /*Estilo de texto de barra de inicio*/
 
 
 
+    .BARRA_INICIO {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 10;
+    padding: 0;
+    }
+
+    .BARRA_INICIO a {
+    text-decoration: none;
+    color: #3c3d3c;
+    font-weight: normal;
+    font-size: 1vw;
+    font-family: "Raleway",Geneva, Tahoma, sans-serif;
+    margin: 5;
+
+    }
+
+    h1 {
+
+    font-weight:normal;
+    font-family: "Raleway",Geneva, Tahoma, sans-serif;
+    margin: 20;
+
+    }
 
 
-        /*estilos del div con el ID QUIENES SOMOS*/
-        #QUIENES_SOMOS {
-            img {
-                max-width: 50%;
-                max-height: 50%;
-            }
-        }
+    /*estilos del div con el ID INICIO*/
+    #INICIO {
 
-        /*estilos del div con el ID BLOG*/
-        #BLOG {
-            img {
-                max-width: 50%;
-                max-height: 50%;
-            }
+    h2 {
+    text-align: center;
+    font-family: "Raleway",Geneva, Tahoma, sans-serif;
+    font-weight:normal;
+    color: #333;
 
-            P {
-                max-width: 50%;
-            }
+    }
 
 
-        }
+    .slider {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+
+    scroll-snap-type: x mandatory;
+
+    }
+
+    /*Estilos del carrusel de INICIO*/
+
+    .slider {
+    position: relative;
+    width: relative;
+    max-width: 50%;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    }
+
+    .slider-container {
+    overflow: hidden;
+    }
+
+    .slider-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    padding: 0;
+    margin: 0;
+    }
+
+    .slider-track li {
+    list-style: none;
+    flex: 0 0 100%;
+    }
+
+    .slider-track img {
+    width: 100%;
+    height: auto;
+    display: block;
+    }
+
+    .btn-prev,
+    .btn-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ffffffcc;
+    border: none;
+    font-size: 2rem;
+    padding: 5px 10px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 5px;
+    }
+
+    .btn-prev {
+    left: 10px;
+    }
+
+    .btn-next {
+    right: 10px;
+    }
+
+    }
+
+    /*estilos del div con el ID QUIENES SOMOS*/
+    #QUIENES_SOMOS {
+    img {
+    max-width: 50%;
+    max-height: 50%;
+    }
+    }
+
+    /*estilos del div con el ID BLOG*/
+    #BLOG {
+    img {
+    max-width: 50%;
+    max-height: 50%;
+    }
+
+    P {
+    max-width: 50%;
+    }
+    }
     </style>
 </head>
 
 <body>
-
     <header>
         <a href="#INICIO" class="logo">
-            <img src="img/Fundación Eliseo.jpg" alt="logo">
+            <img src="img/Logo Eliseo.png" alt="logo">
         </a>
         <a href="#INICIO" class="TITULO"></a>
-            <h1>Fundación Psicología Eliseo</h1>
         </a>
         <ul class="BARRA_INICIO">
             <li><a href="#INICIO">INICIO</a></li>
@@ -195,9 +202,9 @@
                 <ul class="slider-track">
                     <li><img src="img/1.jpg"></li>
                     <li><img src="img/2.jpg"></li>
-                    <li><img src="img/3.jpg"></li>                    
-                    <li><img src="img/4.jpg"></li>                    
-                    <li><img src="img/5.jpg"></li>                    
+                    <li><img src="img/3.jpg"></li>
+                    <li><img src="img/4.jpg"></li>
+                    <li><img src="img/5.jpg"></li>
                     <li><img src="img/6.jpg"></li>
                 </ul>
             </div>
