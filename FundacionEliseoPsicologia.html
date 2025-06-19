@@ -258,10 +258,10 @@
 
         /*estilos del div con el ID BLOG*/
         #BLOG {
-            img {
+            /* img {
                 max-width: 50%;
                 max-height: 50%;
-            }
+            }*/
 
             h2 {
                 text-align: center;
@@ -271,12 +271,96 @@
             }
 
             P {
-                max-width: 50%;
+                display: flex;
+                max-width: fit-content;
                 text-align: center;
                 font-family: "Raleway", Geneva, Tahoma, sans-serif;
                 font-weight: normal;
                 color: #333;
             }
+
+            .blog_item {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 2rem;
+                margin: 3rem auto;
+                max-width: 50%;
+                flex-wrap: wrap;
+                background-color: #80c58021;
+            }
+
+            .blog_item .slider {
+                flex: 1;
+                max-width: 45%;
+            }
+
+            .blog_item .blog_texto {
+                flex: 1;
+                max-width: 50%;
+                font-family: "Raleway", sans-serif;
+                color: #333;
+                text-align: justify;
+            }
+
+            .slider {
+                position: relative;
+                width: 100%;
+                max-width: 500px;
+                margin: auto;
+                overflow: hidden;
+                border-radius: 10px;
+            }
+
+            .slider-container {
+                width: 100%;
+                overflow: hidden;
+            }
+
+            .slider-track {
+                display: flex;
+                transition: transform 0.5s ease;
+                width: 100%;
+                padding: 0;
+                margin: 0;
+            }
+
+            .slider-track li {
+                list-style: none;
+                flex: 0 0 100%;
+            }
+
+            .slider-track img {
+                width: 100%;
+                height: auto;
+                display: block;
+                object-fit: cover;
+            }
+
+            .btn-prev,
+            .btn-next {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background: #ffffffcc;
+                border: none;
+                font-size: 2rem;
+                padding: 5px 10px;
+                cursor: pointer;
+                z-index: 10;
+                border-radius: 5px;
+            }
+
+            .btn-prev {
+                left: 10px;
+            }
+
+            .btn-next {
+                right: 10px;
+            }
+
+
         }
     </style>
 </head>
@@ -337,143 +421,202 @@
     <div id="BLOG">
         <div class="blog_container">
             <h2>Temas de interés</h2>
-                <div class="blog_texto">
-                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit ante felis feugiat massa volutpat mattis
-                        sodales,
-                        luctus nullam consequat sed posuere mauris tempor fringilla ultrices convallis hac rutrum. Massa
-                        auctor
-                        semper varius fusce nisi molestie, dui tempor lobortis nunc tortor fermentum, inceptos velit
-                        integer
-                        leo
-                        sociis. Metus neque mattis egestas quisque nunc nostra porta, inceptos penatibus habitant dui
-                        parturient
-                        suscipit purus, gravida praesent pharetra tortor rhoncus pulvinar.</p>
-                </div>
+            <div class="blog_texto">
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit ante felis feugiat massa volutpat mattis
+                    sodales,
+                    luctus nullam consequat sed posuere mauris tempor fringilla ultrices convallis hac rutrum. Massa
+                    auctor
+                    semper varius fusce nisi molestie, dui tempor lobortis nunc tortor fermentum, inceptos velit
+                    integer
+                    leo
+                    sociis. Metus neque mattis egestas quisque nunc nostra porta, inceptos penatibus habitant dui
+                    parturient
+                    suscipit purus, gravida praesent pharetra tortor rhoncus pulvinar.</p>
             </div>
         </div>
+    </div>
 
-        <!--Sección oculta de carruseles almacenados-->
+    <!--Sección oculta de carruseles almacenados-->
 
-        <div id="CARRUSELES_ALMACENADOS" style="display: none;">
-            <div class="carrusel" data-fecha="2025-06-17">
-                <ul class="slider-track">
-                    <li><img src="img/1.jpg" alt="imagen 1 de carrusel"></li>
-                    <li><img src="img/2.jpg" alt="imagen 2 de carrusel"></li>
-                    <li><img src="img/3.jpg" alt="imagen 3 de carrusel"></li>
+    <div id="CARRUSELES_ALMACENADOS" style="display: none;">
 
-                </ul>
-            </div>
 
-            <div class="carrusel" data-fecha="2025-06-10">
-                <ul class="slider-track">
-                    <li><img src="img/4.jpg" alt="imagen 4 de carrusel"></li>
-                    <li><img src="img/5.jpg" alt="imagen 5 de carrusel"></li>
-                    <li><img src="img/6.jpg" alt="imagen 6 de carrusel"></li>
-                </ul>
+        <div class="carrusel" data-fecha="2025-06-17">
+            <ul class="slider-track">
+                <li><img src="img/1.jpg" alt="imagen 1 de carrusel"></li>
+                <li><img src="img/2.jpg" alt="imagen 2 de carrusel"></li>
+                <li><img src="img/3.jpg" alt="imagen 3 de carrusel"></li>
 
-            </div>
+            </ul>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit ante felis feugiat massa volutpat mattis
+                sodales,
+            </p>
         </div>
 
-
-        <!--sección de donaciones-->
-        <div ID="DONACIONES">
-            <h2>Donaciones</h2>
-            <form>
-                <ul>
-                    <label>Nombre</label>
-                    <input>
-                    <label>correo electrónico</label>
-                    <input>
-                    <button>DONA</button>
-                </ul>
-
-            </form>
+        <div class="carrusel" data-fecha="2025-06-10">
+            <ul class="slider-track">
+                <li><img src="img/4.jpg" alt="imagen 4 de carrusel"></li>
+                <li><img src="img/5.jpg" alt="imagen 5 de carrusel"></li>
+                <li><img src="img/6.jpg" alt="imagen 6 de carrusel"></li>
+            </ul>
+            <p>Metus neque mattis egestas quisque nunc nostra porta, inceptos penatibus habitant dui
+                parturient</p>
         </div>
-        <!--Lógica del sitio web-->
-        <script>
-            /*Funciones del carrusel de INICIO*/
-            const track = document.querySelector(".slider-track");
-            const slides = document.querySelectorAll(".slider-track li");
-            const btnPrev = document.querySelector(".btn-prev");
-            const btnNext = document.querySelector(".btn-next");
+    </div>
 
-            let index = 0;
 
-            function actualizarSlider() {
-                const width = slides[0].clientWidth;
-                track.style.transform = `translateX(-${index * width}px)`;
-            }
-            btnNext.addEventListener("click", () => {
-                m
-                index = (index + 1) % slides.length;
-                actualizarSlider();
-            }
+    <!--sección de donaciones-->
+    <div ID="DONACIONES">
+        <h2>Donaciones</h2>
+        <form>
+            <ul>
+                <label>Nombre</label>
+                <input>
+                <label>correo electrónico</label>
+                <input>
+                <button>DONA</button>
+            </ul>
+
+        </form>
+    </div>
+    <!--Lógica del sitio web-->
+    <script>
+        /*Funciones del carrusel de INICIO*/
+        const track = document.querySelector(".slider-track");
+        const slides = document.querySelectorAll(".slider-track li");
+        const btnPrev = document.querySelector(".btn-prev");
+        const btnNext = document.querySelector(".btn-next");
+
+        let index = 0;
+
+        function actualizarSlider() {
+            const width = slides[0].clientWidth;
+            track.style.transform = `translateX(-${index * width}px)`;
+        }
+        btnNext.addEventListener("click", () => {
+            m
+            index = (index + 1) % slides.length;
+            actualizarSlider();
+        }
+        );
+
+        btnPrev.addEventListener("click", () => {
+            index = (index - 1 + slides.length) % slides.length;
+            actualizarSlider();
+        }
+        );
+
+        window.addEventListener("resize", actualizarSlider);
+
+        /*función de transición de sección QUIENES_SOMOS*/
+
+        // Espera a que todo cargue
+        document.addEventListener("DOMContentLoaded", function () {
+            const texto = document.querySelector("#QUIENES_SOMOS .texto");
+            const imagen = document.querySelector("#QUIENES_SOMOS .imagen img");
+
+            const observer = new IntersectionObserver(
+                (entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            texto.classList.add("activo");
+                            imagen.classList.add("activo");
+                            observer.unobserve(entry.target); // Solo se activa una vez
+                        }
+                    });
+                },
+                {
+                    threshold: 0.3 // 30% visible antes de activar
+                }
             );
 
-            btnPrev.addEventListener("click", () => {
-                index = (index - 1 + slides.length) % slides.length;
-                actualizarSlider();
-            }
-            );
-
-            window.addEventListener("resize", actualizarSlider);
-
-            /*función de transición de sección QUIENES_SOMOS*/
-
-            // Espera a que todo cargue
-            document.addEventListener("DOMContentLoaded", function () {
-                const texto = document.querySelector("#QUIENES_SOMOS .texto");
-                const imagen = document.querySelector("#QUIENES_SOMOS .imagen img");
-
-                const observer = new IntersectionObserver(
-                    (entries, observer) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                texto.classList.add("activo");
-                                imagen.classList.add("activo");
-                                observer.unobserve(entry.target); // Solo se activa una vez
-                            }
-                        });
-                    },
-                    {
-                        threshold: 0.3 // 30% visible antes de activar
-                    }
-                );
-
-                observer.observe(texto);
-            });
-        </script>
-
-        <!--Función para mostrar carruseles almacenados-->
-
-        <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const almacenados = document.querySelectorAll("#CARRUSELES_ALMACENADOS .carrusel");
-        const carruselesArray = Array.from(almacenados);
-
-        // Ordenar por fecha descendente (más reciente primero)
-        carruselesArray.sort((a, b) => {
-            return new Date(b.dataset.fecha) - new Date(a.dataset.fecha);
+            observer.observe(texto);
         });
+    </script>
 
-        // Mostrar el más reciente en INICIO
-        const inicioCarrusel = carruselesArray[0].cloneNode(true);
-        const inicioTrack = inicioCarrusel.querySelector(".slider-track");
-        const inicioSlider = document.querySelector("#CARRUSEL .slider-container");
-        inicioSlider.innerHTML = ""; // Limpiar el original
-        inicioSlider.appendChild(inicioTrack); // Insertar el nuevo track
+    <!--Función para mostrar carruseles almacenados-->
 
-        // Mostrar todos en el BLOG
-        const blogContainer = document.querySelector("#BLOG .blog_container");
-        carruselesArray.forEach(carrusel => {
-            const clone = carrusel.cloneNode(true);
-            clone.style.margin = "2rem auto";
-            clone.querySelectorAll("img").forEach(img => {
-                img.style.maxWidth = "100%";
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const almacenados = document.querySelectorAll("#CARRUSELES_ALMACENADOS .carrusel");
+            const carruselesArray = Array.from(almacenados);
+
+            // Ordenar por fecha
+            carruselesArray.sort((a, b) => new Date(b.dataset.fecha) - new Date(a.dataset.fecha));
+
+            // Mostrar el más reciente en INICIO
+            const inicioCarrusel = carruselesArray[0].cloneNode(true);
+            const inicioTrack = inicioCarrusel.querySelector(".slider-track");
+            const inicioSlider = document.querySelector("#CARRUSEL .slider-container");
+            inicioSlider.innerHTML = "";
+            inicioSlider.appendChild(inicioTrack);
+
+            // Mostrar todos en el BLOG
+            const blogContainer = document.querySelector("#BLOG .blog_container");
+
+            carruselesArray.forEach((carrusel) => {
+                const track = carrusel.querySelector(".slider-track").cloneNode(true);
+                const texto = carrusel.querySelector("p")?.textContent || "Sin descripción.";
+                const slides = track.querySelectorAll("li");
+
+                // Estructura del carrusel
+                const sliderDiv = document.createElement("div");
+                sliderDiv.classList.add("slider");
+
+                const containerDiv = document.createElement("div");
+                containerDiv.classList.add("slider-container");
+                containerDiv.appendChild(track);
+
+                // Botones
+                const prevBtn = document.createElement("button");
+                prevBtn.classList.add("btn-prev");
+                prevBtn.textContent = "⟨";
+
+                const nextBtn = document.createElement("button");
+                nextBtn.classList.add("btn-next");
+                nextBtn.textContent = "⟩";
+
+                sliderDiv.appendChild(containerDiv);
+                sliderDiv.appendChild(prevBtn);
+                sliderDiv.appendChild(nextBtn);
+
+                // Control de desplazamiento individual
+                let index = 0;
+
+                function updateSlider() {
+                    const slideWidth = slides[0].offsetWidth;
+                    track.style.transform = `translateX(-${index * slideWidth}px)`;
+                }
+
+                nextBtn.addEventListener("click", () => {
+                    index = (index + 1) % slides.length;
+                    updateSlider();
+                });
+
+                prevBtn.addEventListener("click", () => {
+                    index = (index - 1 + slides.length) % slides.length;
+                    updateSlider();
+                });
+
+                window.addEventListener("resize", updateSlider);
+                setTimeout(updateSlider, 200); // Espera a que las imágenes carguen
+
+                // Texto
+                const textoDiv = document.createElement("div");
+                textoDiv.classList.add("blog_texto");
+                textoDiv.innerHTML = `<p>${texto}</p>`;
+
+                const itemDiv = document.createElement("div");
+                itemDiv.classList.add("blog_item");
+                itemDiv.appendChild(sliderDiv);
+                itemDiv.appendChild(textoDiv);
+
+                blogContainer.appendChild(itemDiv);
             });
-            blogContainer.appendChild(clone);
         });
-    });
-</script>
+    </script>
+
+
+
 
 </body>
