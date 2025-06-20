@@ -213,6 +213,7 @@
             height: auto;
             display: block;
             border-radius: 5px;
+            margin: 3rem -1rem;
         }
 
         /* Inicialmente ocultos */
@@ -299,6 +300,7 @@
                 font-family: "Raleway", sans-serif;
                 color: #333;
                 text-align: justify;
+                margin-right: 1rem;
             }
 
             .slider {
@@ -473,6 +475,8 @@
     </header>
     <!--Sección de inicio-->
     <div id="INICIO">
+
+
         <h2>¡Blog del día!</h2>
         <section ID="CARRUSEL" class="slider"> <!--Carrusel de imágenes en la página de inicio-->
             <div class="slider-container">
@@ -567,7 +571,7 @@
                     convallis hac rutrum.</p>
             </div>
             <div class="formulario_donaciones">
-                <form>
+                <form id="formDonaciones">
                     <div class="campos">
                         <div class="campo">
                             <label for="Nombre">Nombre</label>
@@ -579,11 +583,17 @@
                         </div>
                     </div>
                     <div class="boton">
-                        <button id="Dona" type="submit">DONA</button>
+                        <button id="Dona" type="submit">Inscribirme</button>
                     </div>
                 </form>
+                <!-- Mensajes de validación -->
+                <p id="mensajeExito" style="display: none; color: green; text-align: center; font-weight: bold;">
+                    ¡Inscripción satisfactoria!
+                </p>
+                <p id="mensajeError" style="display: none; color: red; text-align: center; font-weight: bold;">
+                    Por favor ingresa un nombre y correo válidos.
+                </p>
             </div>
-
         </div>
     </div>
     <!--Lógica del sitio web-->
@@ -601,7 +611,6 @@
             track.style.transform = `translateX(-${index * width}px)`;
         }
         btnNext.addEventListener("click", () => {
-            m
             index = (index + 1) % slides.length;
             actualizarSlider();
         }
@@ -722,8 +731,47 @@
             });
         });
     </script>
+    <!--Funciones de la sección de DONACIONES-->
+    <!--Funciones de la sección de DONACIONES-->
+<script>
+    const nombre = document.getElementById("Nombre");
+    const correo = document.getElementById("Correo");
+    const boton = document.getElementById("Dona");
+    const formulario = document.getElementById("formDonaciones");
+    const mensajeExito = document.getElementById("mensajeExito");
+    const mensajeError = document.getElementById("mensajeError");
 
+    // ✅ Eliminar la lógica que desactiva el botón
+    function limpiarMensajes() {
+        mensajeExito.style.display = "none";
+        mensajeError.style.display = "none";
+    }
 
+    nombre.addEventListener("input", limpiarMensajes);
+    correo.addEventListener("input", limpiarMensajes);
 
+    formulario.addEventListener("submit", function (e) {
+        e.preventDefault();
 
+        const nombreValido = nombre.value.trim().length > 0;
+        const correoValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo.value);
+
+        if (nombreValido && correoValido) {
+            mensajeExito.style.display = "block";
+            mensajeError.style.display = "none";
+            formulario.reset();
+
+            setTimeout(() => {
+                mensajeExito.style.display = "none";
+            }, 3000);
+        } else {
+            mensajeError.style.display = "block";
+            mensajeExito.style.display = "none";
+
+            setTimeout(() => {
+                mensajeError.style.display = "none";
+            }, 3000);
+        }
+    });
+</script>
 </body>
