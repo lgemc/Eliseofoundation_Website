@@ -26,7 +26,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
+            padding: 0 2rem;
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
         }
 
@@ -661,11 +661,61 @@
             carruselesArray.sort((a, b) => new Date(b.dataset.fecha) - new Date(a.dataset.fecha));
 
             // Mostrar el más reciente en INICIO
+            /* const inicioCarrusel = carruselesArray[0].cloneNode(true);
+             const inicioTrack = inicioCarrusel.querySelector(".slider-track");
+             const inicioSlider = document.querySelector("#CARRUSEL .slider-container");
+             inicioSlider.innerHTML = "";
+             inicioSlider.appendChild(inicioTrack);*/
+
             const inicioCarrusel = carruselesArray[0].cloneNode(true);
-            const inicioTrack = inicioCarrusel.querySelector(".slider-track");
-            const inicioSlider = document.querySelector("#CARRUSEL .slider-container");
-            inicioSlider.innerHTML = "";
-            inicioSlider.appendChild(inicioTrack);
+            const inicioSection = document.querySelector("#CARRUSEL");
+
+            // Limpiar el carrusel de inicio
+            inicioSection.innerHTML = "";
+
+            // Crear estructura completa
+            const containerDiv = document.createElement("div");
+            containerDiv.classList.add("slider-container");
+
+            const track = inicioCarrusel.querySelector(".slider-track");
+            containerDiv.appendChild(track);
+
+            // Botones
+            const prevBtn = document.createElement("button");
+            prevBtn.classList.add("btn-prev");
+            prevBtn.textContent = "⟨";
+
+            const nextBtn = document.createElement("button");
+            nextBtn.classList.add("btn-next");
+            nextBtn.textContent = "⟩";
+
+            // Agregar todo a la sección
+            inicioSection.appendChild(containerDiv);
+            inicioSection.appendChild(prevBtn);
+            inicioSection.appendChild(nextBtn);
+
+            // Lógica de control para este carrusel específico
+            let indexInicio = 0;
+            const slidesInicio = track.querySelectorAll("li");
+
+            function actualizarSliderInicio() {
+                const slideWidth = slidesInicio[0].clientWidth;
+                track.style.transform = `translateX(-${indexInicio * slideWidth}px)`;
+            }
+
+            nextBtn.addEventListener("click", () => {
+                indexInicio = (indexInicio + 1) % slidesInicio.length;
+                actualizarSliderInicio();
+            });
+
+            prevBtn.addEventListener("click", () => {
+                indexInicio = (indexInicio - 1 + slidesInicio.length) % slidesInicio.length;
+                actualizarSliderInicio();
+            });
+
+            window.addEventListener("resize", actualizarSliderInicio);
+            setTimeout(actualizarSliderInicio, 200);
+
 
             // Mostrar todos en el BLOG
             const blogContainer = document.querySelector("#BLOG .blog_container");
@@ -733,45 +783,45 @@
     </script>
     <!--Funciones de la sección de DONACIONES-->
     <!--Funciones de la sección de DONACIONES-->
-<script>
-    const nombre = document.getElementById("Nombre");
-    const correo = document.getElementById("Correo");
-    const boton = document.getElementById("Dona");
-    const formulario = document.getElementById("formDonaciones");
-    const mensajeExito = document.getElementById("mensajeExito");
-    const mensajeError = document.getElementById("mensajeError");
+    <script>
+        const nombre = document.getElementById("Nombre");
+        const correo = document.getElementById("Correo");
+        const boton = document.getElementById("Dona");
+        const formulario = document.getElementById("formDonaciones");
+        const mensajeExito = document.getElementById("mensajeExito");
+        const mensajeError = document.getElementById("mensajeError");
 
-    // ✅ Eliminar la lógica que desactiva el botón
-    function limpiarMensajes() {
-        mensajeExito.style.display = "none";
-        mensajeError.style.display = "none";
-    }
-
-    nombre.addEventListener("input", limpiarMensajes);
-    correo.addEventListener("input", limpiarMensajes);
-
-    formulario.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        const nombreValido = nombre.value.trim().length > 0;
-        const correoValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo.value);
-
-        if (nombreValido && correoValido) {
-            mensajeExito.style.display = "block";
-            mensajeError.style.display = "none";
-            formulario.reset();
-
-            setTimeout(() => {
-                mensajeExito.style.display = "none";
-            }, 3000);
-        } else {
-            mensajeError.style.display = "block";
+        // ✅ Eliminar la lógica que desactiva el botón
+        function limpiarMensajes() {
             mensajeExito.style.display = "none";
-
-            setTimeout(() => {
-                mensajeError.style.display = "none";
-            }, 3000);
+            mensajeError.style.display = "none";
         }
-    });
-</script>
+
+        nombre.addEventListener("input", limpiarMensajes);
+        correo.addEventListener("input", limpiarMensajes);
+
+        formulario.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const nombreValido = nombre.value.trim().length > 0;
+            const correoValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo.value);
+
+            if (nombreValido && correoValido) {
+                mensajeExito.style.display = "block";
+                mensajeError.style.display = "none";
+                formulario.reset();
+
+                setTimeout(() => {
+                    mensajeExito.style.display = "none";
+                }, 3000);
+            } else {
+                mensajeError.style.display = "block";
+                mensajeExito.style.display = "none";
+
+                setTimeout(() => {
+                    mensajeError.style.display = "none";
+                }, 3000);
+            }
+        });
+    </script>
 </body>
