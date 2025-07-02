@@ -1,0 +1,75 @@
+#QUIENES_SOMOS {
+  width: 100%;
+  margin: 5rem 0;
+  scroll-margin-top: 20vh;
+}
+
+#QUIENES_SOMOS .contenido {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: #80c58021;
+}
+
+#QUIENES_SOMOS .texto {
+  width: 50vw;
+  padding: 2rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+}
+
+#QUIENES_SOMOS .texto h1,
+#QUIENES_SOMOS .texto p {
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  color: #333;
+  font-weight: normal;
+  
+}
+
+#QUIENES_SOMOS .imagen {
+  width: 50vw;
+}
+
+#QUIENES_SOMOS .imagen img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 5px;
+  margin: 3rem -1rem;
+  opacity: 0;
+}
+
+/* Animaciones */
+.texto.activo {
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+.imagen img.activo {
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}

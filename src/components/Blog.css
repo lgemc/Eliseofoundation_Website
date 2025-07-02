@@ -1,0 +1,82 @@
+#BLOG {
+  padding: 2rem;
+}
+
+#BLOG h2 {
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-weight: normal;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.blog_item {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  margin: 2rem auto;
+  max-width: 80%;
+  background-color: #80c58021;
+  padding: 1rem;
+  border-radius: 8px;
+  flex-wrap: wrap;
+}
+
+.blog_texto {
+  flex: 1;
+  font-family: "Raleway", sans-serif;
+  color: #333;
+  text-align: justify;
+}
+
+.slider {
+  position: relative;
+  max-width: 400px;
+  overflow: hidden;
+  border-radius: 10px;
+  flex: 1;
+}
+
+.slider-container {
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  padding: 0;
+  margin: 0;
+}
+
+.slider-track li {
+  list-style: none;
+  flex: 0 0 100%;
+}
+
+.slider-track img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.btn-prev,
+.btn-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ffffffcc;
+  border: none;
+  font-size: 2rem;
+  padding: 5px 10px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 5px;
+}
+
+.btn-prev {
+  left: 10px;
+}
+
+.btn-next {
+  right: 10px;
+}
