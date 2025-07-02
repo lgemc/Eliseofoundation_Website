@@ -1,0 +1,827 @@
+<!-- Sitio web de fundación de ayuda psicológica Fundación Eliseo-->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta chartset="UTF-8" />
+    <meta name="viewport" content="" width=device-width, initial-scale=1.0 />
+    <title>psicologiaeliseo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!--estilos de los elementos del sitio web-->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /*en el header queda pendiente cómo hacer que la lista se convierta en un menú desplegable después de cierto formato*/
+        header {
+            background-color: rgba(164, 240, 164, 0.457);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo img {
+            max-width: 20%;
+            max-height: 20%;
+            min-width: 20%;
+            border-radius: 0%;
+        }
+
+        .TITULO {
+            display: flex;
+            /*align-items:center;*/
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /*Estilo de texto de barra de inicio*/
+
+
+
+        .BARRA_INICIO {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 10;
+            padding: 0;
+        }
+
+        .BARRA_INICIO a {
+            text-decoration: none;
+            color: #3c3d3c;
+            font-weight: normal;
+            font-size: 1vw;
+            font-family: "Raleway", Geneva, Tahoma, sans-serif;
+            margin: 5;
+
+        }
+
+        h1 {
+
+            font-weight: normal;
+            font-family: "Raleway", Geneva, Tahoma, sans-serif;
+            margin: 20;
+
+        }
+
+
+        /*estilos del div con el ID INICIO*/
+        #INICIO {
+
+            h2 {
+                text-align: center;
+                font-family: "Raleway", Geneva, Tahoma, sans-serif;
+                font-weight: normal;
+                color: #333;
+
+            }
+
+            /*En los sliders queda pendiente cambiar el formato de las imágenes para que funcionen bien en formato vertical*/
+            .slider {
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow-x: auto;
+                scroll-behavior: smooth;
+
+                scroll-snap-type: x mandatory;
+
+            }
+
+            /*Estilos del carrusel de INICIO*/
+
+            .slider {
+                position: relative;
+                width: relative;
+                max-width: 50%;
+                margin: auto;
+                overflow: hidden;
+                border-radius: 10px;
+            }
+
+            .slider-container {
+                overflow: hidden;
+            }
+
+            .slider-track {
+                display: flex;
+                transition: transform 0.5s ease;
+                padding: 0;
+                margin: 0;
+            }
+
+            .slider-track li {
+                list-style: none;
+                flex: 0 0 100%;
+            }
+
+            .slider-track img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+
+            .btn-prev,
+            .btn-next {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background: #ffffffcc;
+                border: none;
+                font-size: 2rem;
+                padding: 5px 10px;
+                cursor: pointer;
+                z-index: 10;
+                border-radius: 5px;
+            }
+
+            .btn-prev {
+                left: 10px;
+            }
+
+            .btn-next {
+                right: 10px;
+            }
+
+        }
+
+        /*estilos del div con el ID QUIENES SOMOS*/
+        #QUIENES_SOMOS {
+            width: 100%;
+            margin: 5rem 0;
+            justify-content: center;
+            padding: 0;
+            scroll-margin-top: 20vh;
+        }
+
+        #QUIENES_SOMOS .contenido {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: auto;
+            background-color: #80c58021;
+        }
+
+        #QUIENES_SOMOS .texto {
+            width: 50vw;
+            padding: 2rem;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            h1 {
+                text-align: center;
+                font-family: "Raleway", Geneva, Tahoma, sans-serif;
+                font-weight: normal;
+                color: #333;
+            }
+
+            p {
+                text-align: center;
+                font-family: "Raleway", Geneva, Tahoma, sans-serif;
+                font-weight: normal;
+                color: #333;
+            }
+
+        }
+
+        #QUIENES_SOMOS .imagen {
+            width: 50vw;
+        }
+
+        #QUIENES_SOMOS .imagen img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 5px;
+            margin: 3rem -1rem;
+        }
+
+        /* Inicialmente ocultos */
+        #QUIENES_SOMOS .texto,
+        #QUIENES_SOMOS .imagen img {
+            opacity: 0;
+        }
+
+        /* Animación al entrar */
+        #QUIENES_SOMOS .texto.activo {
+            animation: slideInLeft 1s ease-out forwards;
+        }
+
+        #QUIENES_SOMOS .imagen img.activo {
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+
+        /* Animaciones definidas */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                filter: blur(10px);
+            }
+
+            to {
+                opacity: 1;
+                filter: blur(0);
+            }
+        }
+
+
+        /*estilos del div con el ID BLOG*/
+        #BLOG {
+
+
+            h2 {
+                text-align: center;
+                font-family: "Raleway", Geneva, Tahoma, sans-serif;
+                font-weight: normal;
+                color: #333;
+            }
+
+            P {
+                display: flex;
+                max-width: fit-content;
+                text-align: center;
+                font-family: "Raleway", Geneva, Tahoma, sans-serif;
+                font-weight: normal;
+                color: #333;
+            }
+
+            .blog_item {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 2rem;
+                margin: 3rem auto;
+                max-width: 50%;
+                flex-wrap: wrap;
+                background-color: #80c58021;
+            }
+
+            .blog_item .slider {
+                flex: 1;
+                max-width: 45%;
+            }
+
+            .blog_item .blog_texto {
+                flex: 1;
+                max-width: 50%;
+                font-family: "Raleway", sans-serif;
+                color: #333;
+                text-align: justify;
+                margin-right: 1rem;
+            }
+
+            .slider {
+                position: relative;
+                width: 100%;
+                max-width: 500px;
+                margin: auto;
+                overflow: hidden;
+                border-radius: 10px;
+            }
+
+            .slider-container {
+                width: 100%;
+                overflow: hidden;
+            }
+
+            .slider-track {
+                display: flex;
+                transition: transform 0.5s ease;
+                width: 100%;
+                padding: 0;
+                margin: 0;
+            }
+
+            .slider-track li {
+                list-style: none;
+                flex: 0 0 100%;
+            }
+
+            .slider-track img {
+                width: 100%;
+                height: auto;
+                display: block;
+                object-fit: cover;
+            }
+
+            .btn-prev,
+            .btn-next {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background: #ffffffcc;
+                border: none;
+                font-size: 2rem;
+                padding: 5px 10px;
+                cursor: pointer;
+                z-index: 10;
+                border-radius: 5px;
+            }
+
+            .btn-prev {
+                left: 10px;
+            }
+
+            .btn-next {
+                right: 10px;
+            }
+
+
+        }
+
+        #DONACIONES {
+
+            /*El header de donaciones puede tener una animación de difuminado*/
+            .header_donaciones {
+
+                flex-direction: row;
+                width: 100%;
+                height: auto;
+                background-color: #80c58021;
+
+
+
+                text-align: center;
+                font-family: "Raleway", Geneva, Tahoma, sans-serif;
+                font-weight: normal;
+                color: #333;
+            }
+
+            h2 {
+                text-align: center;
+                font-family: "Raleway", Geneva, Tahoma, sans-serif;
+                font-weight: normal;
+                color: #333;
+                padding: 2rem;
+                padding-bottom: 0;
+            }
+
+            P {
+                display: flex;
+                max-width: fit-content;
+                text-align: center;
+                font-family: "Raleway", Geneva, Tahoma, sans-serif;
+                font-weight: normal;
+                color: #333;
+                margin: 0 2rem;
+                padding: 2rem;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .formulario_donaciones {
+                background-color: #80c58046;
+                padding: 2rem;
+                margin: 3rem;
+
+                font-family: "Raleway", Geneva, Tahoma, sans-serif;
+                font-weight: normal;
+                color: #333;
+                border-radius: 10px;
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+
+            }
+
+            .campos {
+                display: flex;
+                gap: 20px;
+                margin-bottom: 20px;
+                flex-wrap: wrap;
+            }
+
+            .campo {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+            }
+
+            input {
+                padding: 8px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+            }
+
+            .boton {
+                margin-top: 10px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+
+            button {
+                padding: 10px 20px;
+                border: none;
+                background-color: #286928d4;
+                color: white;
+                border-radius: 5px;
+                cursor: pointer;
+                width: 150px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="#INICIO" class="logo">
+            <img src="img/Logo Eliseo.png" alt="logo">
+        </a>
+        <a href="#INICIO" class="TITULO"></a>
+        </a>
+        <ul class="BARRA_INICIO">
+            <li><a href="#INICIO">INICIO</a></li>
+            <li><a href="#QUIENES_SOMOS">QUIENES SOMOS</a></li>
+            <li><a href="#BLOG">BLOG</a></li>
+            <li><a href="#DONACIONES">DONACIONES</a></li>
+        </ul>
+    </header>
+    <!--Sección de inicio-->
+    <div id="INICIO">
+
+
+        <h2>¡Blog del día!</h2>
+        <section ID="CARRUSEL" class="slider"> <!--Carrusel de imágenes en la página de inicio-->
+            <div class="slider-container">
+                <ul class="slider-track">
+                    <li><img src="img/1.jpg"></li>
+                    <li><img src="img/2.jpg"></li>
+                    <li><img src="img/3.jpg"></li>
+                    <li><img src="img/4.jpg"></li>
+                    <li><img src="img/5.jpg"></li>
+                    <li><img src="img/6.jpg"></li>
+                </ul>
+            </div>
+            <button class="btn-prev">⟨</button>
+            <button class="btn-next">⟩</button>
+
+        </section>
+
+    </div>
+
+    <!--sección de quienes somos-->
+
+    <div id="QUIENES_SOMOS">
+        <div class="contenido">
+            <div class="texto">
+                <h1>Quienes somos</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit ante felis feugiat massa volutpat mattis
+                    sodales,
+                    luctus nullam consequat sed posuere mauris tempor fringilla ultrices convallis hac rutrum. Massa
+                    auctor</p>
+            </div>
+            <div class="imagen">
+                <img src="img/grupo.jpg">
+            </div>
+        </div>
+    </div>
+    <!--sección de BLOG-->
+
+    <div id="BLOG">
+        <div class="blog_container">
+            <h2>Temas de interés</h2>
+            <div class="blog_texto">
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit ante felis feugiat massa volutpat mattis
+                    sodales,
+                    luctus nullam consequat sed posuere mauris tempor fringilla ultrices convallis hac rutrum. Massa
+                    auctor
+                    semper varius fusce nisi molestie, dui tempor lobortis nunc tortor fermentum, inceptos velit
+                    integer
+                    leo
+                    sociis. Metus neque mattis egestas quisque nunc nostra porta, inceptos penatibus habitant dui
+                    parturient
+                    suscipit purus, gravida praesent pharetra tortor rhoncus pulvinar.</p>
+            </div>
+        </div>
+    </div>
+
+    <!--Sección oculta de carruseles almacenados-->
+
+    <div id="CARRUSELES_ALMACENADOS" style="display: none;">
+
+
+        <div class="carrusel" data-fecha="2025-06-17">
+            <ul class="slider-track">
+                <li><img src="img/1.jpg" alt="imagen 1 de carrusel"></li>
+                <li><img src="img/2.jpg" alt="imagen 2 de carrusel"></li>
+                <li><img src="img/3.jpg" alt="imagen 3 de carrusel"></li>
+
+            </ul>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit ante felis feugiat massa volutpat mattis
+                sodales,
+            </p>
+        </div>
+
+        <div class="carrusel" data-fecha="2025-06-10">
+            <ul class="slider-track">
+                <li><img src="img/4.jpg" alt="imagen 4 de carrusel"></li>
+                <li><img src="img/5.jpg" alt="imagen 5 de carrusel"></li>
+                <li><img src="img/6.jpg" alt="imagen 6 de carrusel"></li>
+            </ul>
+            <p>Metus neque mattis egestas quisque nunc nostra porta, inceptos penatibus habitant dui
+                parturient</p>
+        </div>
+    </div>
+
+
+    <!--sección de donaciones-->
+    <div ID="DONACIONES">
+        <div class="contenido_donaciones">
+            <div class="header_donaciones">
+                <h2>Donaciones</h2>
+                <p id="parrafo_donaciones">Lorem ipsum dolor sit amet consectetur adipiscing elit ante felis feugiat
+                    massa volutpat mattis sodales, luctus nullam consequat sed posuere mauris tempor fringilla ultrices
+                    convallis hac rutrum.</p>
+            </div>
+            <div class="formulario_donaciones">
+                <form id="formDonaciones">
+                    <div class="campos">
+                        <div class="campo">
+                            <label for="Nombre">Nombre</label>
+                            <input id="Nombre" type="text">
+                        </div>
+                        <div class="campo">
+                            <label for="Correo">Correo Electrónico</label>
+                            <input id="Correo" type="email" />
+                        </div>
+                    </div>
+                    <div class="boton">
+                        <button id="Dona" type="submit">Inscribirme</button>
+                    </div>
+                </form>
+                <!-- Mensajes de validación -->
+                <p id="mensajeExito" style="display: none; color: green; text-align: center; font-weight: bold;">
+                    ¡Inscripción satisfactoria!
+                </p>
+                <p id="mensajeError" style="display: none; color: red; text-align: center; font-weight: bold;">
+                    Por favor ingresa un nombre y correo válidos.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!--Lógica del sitio web-->
+    <script>
+        /*Funciones del carrusel de INICIO*/
+        const track = document.querySelector(".slider-track");
+        const slides = document.querySelectorAll(".slider-track li");
+        const btnPrev = document.querySelector(".btn-prev");
+        const btnNext = document.querySelector(".btn-next");
+
+        let index = 0;
+
+        function actualizarSlider() {
+            const width = slides[0].clientWidth;
+            track.style.transform = `translateX(-${index * width}px)`;
+        }
+        btnNext.addEventListener("click", () => {
+            index = (index + 1) % slides.length;
+            actualizarSlider();
+        }
+        );
+
+        btnPrev.addEventListener("click", () => {
+            index = (index - 1 + slides.length) % slides.length;
+            actualizarSlider();
+        }
+        );
+
+        window.addEventListener("resize", actualizarSlider);
+
+        /*función de transición de sección QUIENES_SOMOS*/
+
+        // Espera a que todo cargue
+        document.addEventListener("DOMContentLoaded", function () {
+            const texto = document.querySelector("#QUIENES_SOMOS .texto");
+            const imagen = document.querySelector("#QUIENES_SOMOS .imagen img");
+
+            const observer = new IntersectionObserver(
+                (entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            texto.classList.add("activo");
+                            imagen.classList.add("activo");
+                            observer.unobserve(entry.target); // Solo se activa una vez
+                        }
+                    });
+                },
+                {
+                    threshold: 0.3 // 30% visible antes de activar
+                }
+            );
+
+            observer.observe(texto);
+        });
+    </script>
+
+    <!--Función para mostrar carruseles almacenados-->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const almacenados = document.querySelectorAll("#CARRUSELES_ALMACENADOS .carrusel");
+            const carruselesArray = Array.from(almacenados);
+
+            // Ordenar por fecha
+            carruselesArray.sort((a, b) => new Date(b.dataset.fecha) - new Date(a.dataset.fecha));
+
+            // Mostrar el más reciente en INICIO
+            /* const inicioCarrusel = carruselesArray[0].cloneNode(true);
+             const inicioTrack = inicioCarrusel.querySelector(".slider-track");
+             const inicioSlider = document.querySelector("#CARRUSEL .slider-container");
+             inicioSlider.innerHTML = "";
+             inicioSlider.appendChild(inicioTrack);*/
+
+            const inicioCarrusel = carruselesArray[0].cloneNode(true);
+            const inicioSection = document.querySelector("#CARRUSEL");
+
+            // Limpiar el carrusel de inicio
+            inicioSection.innerHTML = "";
+
+            // Crear estructura completa
+            const containerDiv = document.createElement("div");
+            containerDiv.classList.add("slider-container");
+
+            const track = inicioCarrusel.querySelector(".slider-track");
+            containerDiv.appendChild(track);
+
+            // Botones
+            const prevBtn = document.createElement("button");
+            prevBtn.classList.add("btn-prev");
+            prevBtn.textContent = "⟨";
+
+            const nextBtn = document.createElement("button");
+            nextBtn.classList.add("btn-next");
+            nextBtn.textContent = "⟩";
+
+            // Agregar todo a la sección
+            inicioSection.appendChild(containerDiv);
+            inicioSection.appendChild(prevBtn);
+            inicioSection.appendChild(nextBtn);
+
+            // Lógica de control para este carrusel específico
+            let indexInicio = 0;
+            const slidesInicio = track.querySelectorAll("li");
+
+            function actualizarSliderInicio() {
+                const slideWidth = slidesInicio[0].clientWidth;
+                track.style.transform = `translateX(-${indexInicio * slideWidth}px)`;
+            }
+
+            nextBtn.addEventListener("click", () => {
+                indexInicio = (indexInicio + 1) % slidesInicio.length;
+                actualizarSliderInicio();
+            });
+
+            prevBtn.addEventListener("click", () => {
+                indexInicio = (indexInicio - 1 + slidesInicio.length) % slidesInicio.length;
+                actualizarSliderInicio();
+            });
+
+            window.addEventListener("resize", actualizarSliderInicio);
+            setTimeout(actualizarSliderInicio, 200);
+
+
+            // Mostrar todos en el BLOG
+            const blogContainer = document.querySelector("#BLOG .blog_container");
+
+            carruselesArray.forEach((carrusel) => {
+                const track = carrusel.querySelector(".slider-track").cloneNode(true);
+                const texto = carrusel.querySelector("p")?.textContent || "Sin descripción.";
+                const slides = track.querySelectorAll("li");
+
+                // Estructura del carrusel
+                const sliderDiv = document.createElement("div");
+                sliderDiv.classList.add("slider");
+
+                const containerDiv = document.createElement("div");
+                containerDiv.classList.add("slider-container");
+                containerDiv.appendChild(track);
+
+                // Botones
+                const prevBtn = document.createElement("button");
+                prevBtn.classList.add("btn-prev");
+                prevBtn.textContent = "⟨";
+
+                const nextBtn = document.createElement("button");
+                nextBtn.classList.add("btn-next");
+                nextBtn.textContent = "⟩";
+
+                sliderDiv.appendChild(containerDiv);
+                sliderDiv.appendChild(prevBtn);
+                sliderDiv.appendChild(nextBtn);
+
+                // Control de desplazamiento individual
+                let index = 0;
+
+                function updateSlider() {
+                    const slideWidth = slides[0].offsetWidth;
+                    track.style.transform = `translateX(-${index * slideWidth}px)`;
+                }
+
+                nextBtn.addEventListener("click", () => {
+                    index = (index + 1) % slides.length;
+                    updateSlider();
+                });
+
+                prevBtn.addEventListener("click", () => {
+                    index = (index - 1 + slides.length) % slides.length;
+                    updateSlider();
+                });
+
+                window.addEventListener("resize", updateSlider);
+                setTimeout(updateSlider, 200); // Espera a que las imágenes carguen
+
+                // Texto
+                const textoDiv = document.createElement("div");
+                textoDiv.classList.add("blog_texto");
+                textoDiv.innerHTML = `<p>${texto}</p>`;
+
+                const itemDiv = document.createElement("div");
+                itemDiv.classList.add("blog_item");
+                itemDiv.appendChild(sliderDiv);
+                itemDiv.appendChild(textoDiv);
+
+                blogContainer.appendChild(itemDiv);
+            });
+        });
+    </script>
+    <!--Funciones de la sección de DONACIONES-->
+    <!--Funciones de la sección de DONACIONES-->
+    <script>
+        const nombre = document.getElementById("Nombre");
+        const correo = document.getElementById("Correo");
+        const boton = document.getElementById("Dona");
+        const formulario = document.getElementById("formDonaciones");
+        const mensajeExito = document.getElementById("mensajeExito");
+        const mensajeError = document.getElementById("mensajeError");
+
+        // ✅ Eliminar la lógica que desactiva el botón
+        function limpiarMensajes() {
+            mensajeExito.style.display = "none";
+            mensajeError.style.display = "none";
+        }
+
+        nombre.addEventListener("input", limpiarMensajes);
+        correo.addEventListener("input", limpiarMensajes);
+
+        formulario.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const nombreValido = nombre.value.trim().length > 0;
+            const correoValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo.value);
+
+            if (nombreValido && correoValido) {
+                mensajeExito.style.display = "block";
+                mensajeError.style.display = "none";
+                formulario.reset();
+
+                setTimeout(() => {
+                    mensajeExito.style.display = "none";
+                }, 3000);
+            } else {
+                mensajeError.style.display = "block";
+                mensajeExito.style.display = "none";
+
+                setTimeout(() => {
+                    mensajeError.style.display = "none";
+                }, 3000);
+            }
+        });
+    </script>
+</body>
