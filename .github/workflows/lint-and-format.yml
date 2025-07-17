@@ -28,4 +28,4 @@ jobs:
         run: npm run lint
 
       - name: Run formatter check
-        run: npx prettier --check .
+        run: npm run format:check
