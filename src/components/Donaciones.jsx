@@ -1,4 +1,4 @@
-import "./Donaciones.css";
+import './Donaciones.css';
 
 export default function Donaciones() {
   return (
@@ -6,7 +6,8 @@ export default function Donaciones() {
       <div className="donaciones_container">
         <h2>Apóyanos con tu donación</h2>
         <p>
-          Tu aporte nos ayuda a brindar apoyo psicológico a quienes más lo necesitan.
+          Tu aporte nos ayuda a brindar apoyo psicológico a quienes más lo
+          necesitan.
         </p>
 
         <form className="donacion_form">

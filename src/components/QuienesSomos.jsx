@@ -1,5 +1,5 @@
-import { useEffect, useRef } from "react";
-import "./QuienesSomos.css";
+import { useEffect, useRef } from 'react';
+import './QuienesSomos.css';
 
 export default function QuienesSomos() {
   const textoRef = useRef(null);
@@ -10,8 +10,8 @@ export default function QuienesSomos() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            textoRef.current.classList.add("activo");
-            imagenRef.current.classList.add("activo");
+            textoRef.current.classList.add('activo');
+            imagenRef.current.classList.add('activo');
             observer.disconnect(); // se activa solo una vez
           }
         });

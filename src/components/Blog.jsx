@@ -55,8 +55,12 @@ function CarruselItem({ imagenes, descripcion }) {
             ))}
           </ul>
         </div>
-        <button className="btn-prev" onClick={() => cambiarSlide(index - 1)}>⟨</button>
-        <button className="btn-next" onClick={() => cambiarSlide(index + 1)}>⟩</button>
+        <button className="btn-prev" onClick={() => cambiarSlide(index - 1)}>
+          ⟨
+        </button>
+        <button className="btn-next" onClick={() => cambiarSlide(index + 1)}>
+          ⟩
+        </button>
       </div>
       <div className="blog_texto">
         <p>{descripcion}</p>

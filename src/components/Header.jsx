@@ -1,4 +1,4 @@
-import "./Header.css";
+import './Header.css';
 
 export default function Header() {
   return (
@@ -8,10 +8,18 @@ export default function Header() {
       </a>
       {/*<a href="#INICIO" className="TITULO">Fundación Eliseo</a>*/}
       <ul className="BARRA_INICIO">
-        <li><a href="#INICIO">INICIO</a></li>
-        <li><a href="#QUIENES_SOMOS">QUIENES SOMOS</a></li>
-        <li><a href="#BLOG">BLOG</a></li>
-        <li><a href="#DONACIONES">DONACIONES</a></li>
+        <li>
+          <a href="#INICIO">INICIO</a>
+        </li>
+        <li>
+          <a href="#QUIENES_SOMOS">QUIENES SOMOS</a>
+        </li>
+        <li>
+          <a href="#BLOG">BLOG</a>
+        </li>
+        <li>
+          <a href="#DONACIONES">DONACIONES</a>
+        </li>
       </ul>
     </header>
   );

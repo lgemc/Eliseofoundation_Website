@@ -1,5 +1,5 @@
-import { useRef, useState, useEffect } from "react";
-import "./Inicio.css"; // Si deseas mantener estilos separados
+import { useRef, useState, useEffect } from 'react';
+import './Inicio.css'; // Si deseas mantener estilos separados
 
 export default function Inicio() {
   const trackRef = useRef(null);
@@ -9,7 +9,7 @@ export default function Inicio() {
   useEffect(() => {
     const updateSlideWidth = () => {
       if (trackRef.current) {
-        const firstSlide = trackRef.current.querySelector("li");
+        const firstSlide = trackRef.current.querySelector('li');
         if (firstSlide) {
           setSlideWidth(firstSlide.clientWidth);
         }
@@ -17,8 +17,8 @@ export default function Inicio() {
     };
 
     updateSlideWidth();
-    window.addEventListener("resize", updateSlideWidth);
-    return () => window.removeEventListener("resize", updateSlideWidth);
+    window.addEventListener('resize', updateSlideWidth);
+    return () => window.removeEventListener('resize', updateSlideWidth);
   }, []);
 
   useEffect(() => {
@@ -41,16 +41,32 @@ export default function Inicio() {
       <section id="CARRUSEL" className="slider">
         <div className="slider-container">
           <ul className="slider-track" ref={trackRef}>
-            <li><img src="/img/1.jpg" alt="1" /></li>
-            <li><img src="/img/2.jpg" alt="2" /></li>
-            <li><img src="/img/3.jpg" alt="3" /></li>
-            <li><img src="/img/4.jpg" alt="4" /></li>
-            <li><img src="/img/5.jpg" alt="5" /></li>
-            <li><img src="/img/6.jpg" alt="6" /></li>
+            <li>
+              <img src="/img/1.jpg" alt="1" />
+            </li>
+            <li>
+              <img src="/img/2.jpg" alt="2" />
+            </li>
+            <li>
+              <img src="/img/3.jpg" alt="3" />
+            </li>
+            <li>
+              <img src="/img/4.jpg" alt="4" />
+            </li>
+            <li>
+              <img src="/img/5.jpg" alt="5" />
+            </li>
+            <li>
+              <img src="/img/6.jpg" alt="6" />
+            </li>
           </ul>
         </div>
-        <button className="btn-prev" onClick={handlePrev}>⟨</button>
-        <button className="btn-next" onClick={handleNext}>⟩</button>
+        <button className="btn-prev" onClick={handlePrev}>
+          ⟨
+        </button>
+        <button className="btn-next" onClick={handleNext}>
+          ⟩
+        </button>
       </section>
     </div>
   );

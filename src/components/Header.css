@@ -24,7 +24,7 @@ header {
 .TITULO {
   text-decoration: none;
   color: inherit;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 1.2rem;
 }
 
@@ -41,6 +41,6 @@ header {
   color: #3c3d3c;
   font-weight: normal;
   font-size: 1vw;
-  font-family: "Raleway", Geneva, Tahoma, sans-serif;
+  font-family: 'Raleway', Geneva, Tahoma, sans-serif;
   margin: 5;
 }
